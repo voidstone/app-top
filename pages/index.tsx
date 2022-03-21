@@ -1,11 +1,21 @@
-import React from "react";
-import { Htag, Button, P, Tag } from "../components";
+import { useEffect, useState } from "react";
+import { Htag, Button, P, Tag, Rating } from "../components";
 
 export default function Home() {
+  const [counter, setCounter] = useState<number>(0);
+
+  useEffect(() => {
+    console.log("Counter " + counter);
+  });
+
   return (
-    <div>
-      <Htag tag="h1">text of Title</Htag>
-      <Button appearance="primary" arrow="right">
+    <>
+      <Htag tag="h1">{counter}</Htag>
+      <Button
+        appearance="primary"
+        arrow="right"
+        onClick={() => setCounter((x) => x + 1)}
+      >
         Нажми плз
       </Button>
       <Button appearance="ghost" arrow="right">
@@ -21,6 +31,7 @@ export default function Home() {
       <Tag size="s" color="ghost">
         ghost
       </Tag>
-    </div>
+      <Rating rating={2} />
+    </>
   );
 }
