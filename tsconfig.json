@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+
     "target": "es5",
     "lib": [
       "dom",
@@ -22,7 +23,7 @@
     "incremental": true
   },
   "include": [
-    "next-env.d.ts",
+    "next-env-custom.d.ts",
     "images.d.ts",
     "**/*.ts",
     "**/*.tsx"
